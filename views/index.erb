@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%= erb :"partial/header" %>
+<body>
+  <div>
+    <center>
+      <h1 class="game-title">25 Words or Less</h1>
+      <p><br/></p>
+      <h2><a href="/new-game">New Game</a></h2>
+      <%= '<h2><a href="/resume-game">Resume Game</a></h2>' if $game[session.id] %>
+      <h2><a href="/word-generator">Word Generator Only</a></h2>
+      <h2><a href="/rules">Rules</a></h2>
+    </center>
+  </div>
+</body>
+</html
+

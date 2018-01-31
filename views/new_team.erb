@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<%= erb :"partial/header" %>
+<body>
+  <div class='justify-content-center'>
+    <div class='col-md-4 col-md-offset-4'>
+      <center>
+        <h1>New Team</h1>
+        <hr>
+        <%= "<h3>Teams already in the game:</h3>" if $game[session.id].teams.count > 0 %>
+        <%= erb :'partial/team_players' %>
+        <%= '<hr>' if $game[session.id].teams.count > 0 %>
+        <form action="/new-team" method="post">
+          <div class="form-group required">
+            <label class="control-label" for="team-name">Team Name</label>
+            <input class="form-control" id="team-name" name="team-name" required>
+          </div>
+          <% $game[session.id].num_players_per_team.times do |i| %>
+          <div class="form-group">
+            <label for="<%= "player#{i}" %>">Player <%= i + 1 %></label>
+            <input class="form-control" id="<%= "player#{i}" %>" name="<%= "player#{i}" %>">
+          </div>
+          <% end %>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </center>
+    </div>
+  </div>
+</body>
+</html
+

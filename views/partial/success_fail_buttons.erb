@@ -1,0 +1,15 @@
+<div>
+  <div id="current-team">
+    <%= erb :'partial/current_team' %>
+  </div>
+
+  <div class="col-md-8">
+    <button id="success-button" type="button" class="btn btn-success">Success</button>
+    <button id="fail-button" type="button" class="btn btn-danger">Fail</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#success-button').click(round_success)
+  $('#fail-button').click(round_fail)
+</script>

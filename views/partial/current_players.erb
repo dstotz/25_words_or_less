@@ -1,0 +1,20 @@
+<% @player_list = [] %>
+<% if $game[session.id] %>
+  <% $game[session.id].teams.each do |team| %>
+    <% string = "<p class=\"player-list\">#{team.team_name}" %>
+    <% string += ": #{team.players.join(', ')}" if team.players.count > 0 %>
+    <% string += '</p>' %>
+    <% @player_list << string %>
+  <% end %>
+  <% @player_list << '<p class="score-list">&nbsp;</p>' if @player_list.count.odd? %>
+<% end %>
+
+<div class="col-md-12">
+  <% split_count = (@player_list.count / 2) %>
+  <% split_count = 1 if split_count.zero? %>
+  <% @player_list.each_slice(split_count) do |group| %>
+    <%= "<div class=\"col-md-6 col-sm-6 col-xs-6\">" %>
+    <%= group.join %>
+    <%= '<hr></div>' %>
+  <% end %>
+</div>

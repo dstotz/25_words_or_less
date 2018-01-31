@@ -1,0 +1,79 @@
+p {
+  font-size: 15px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h3.round-number {
+  z-index: -1;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+img.home-button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+input#hide-button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+div#current-score {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+p.score-list, p.player-list {
+  font-size: 15px !important;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+p.help-text {
+  /*color: lightgray;*/
+  color: rgba(0, 0, 0, 0.25);
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+button.team-buttons {
+  margin: 10px;
+  width: 40%;
+}
+
+#round-clock {
+  width: 110%;
+}
+
+#success-button, #fail-button {
+  width: 120px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.form-group.required .control-label:after {
+  content:" *";
+  color:red;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<%= erb :"partial/header" %>
+<body>
+  <input type="image" id="hide-button" src="images/hide.png" alt="Hide">
+  <div class='justify-content-center'>
+    <div class="container">
+      <div class='col-md-4 col-md-offset-4'>
+        <center>
+          <div id=game-details>
+            <div id=current-round class="current-round">
+              <%= erb :"partial/current_round" %>
+            </div>
+            <div id=current-score class="current-score">
+              <%= erb :"partial/current_score" %>
+            </div>
+            <div id="words">
+              <%= erb :'partial/new_words' %>
+            </div>
+            <p class="help-text">(Tap for new words)</p>
+            <hr/>
+            <div id=team-buttons>
+              <p>Who won the bid?</p>
+              <%= erb :'partial/team_buttons' %>
+            </div>
+            <div id=set-bidding style="display:none">
+              <%= erb :'partial/set_bid_buttons' %>
+            </div>
+            <div id=bid-counter style="display:none">
+              <%= erb :'partial/bid_counter' %>
+            </div>
+            <div id=round-outcome style="display:none">
+              <%= erb :'partial/success_fail_buttons' %>
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  start_game_updater();
+  $("#words").click(refresh_words);
+  // $("#get-new-words-button").click(refresh_words);
+  $("#hide-button").click(toggle_hide_words);
+  $('#words').fadeIn(10000);
+  $('#current-score').click(toggle_score_team);
+</script>

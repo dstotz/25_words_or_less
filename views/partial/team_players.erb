@@ -1,0 +1,6 @@
+<% $game[session.id].teams.each do |team| %>
+  <p>
+  <%= "<b>#{team.team_name}</b>" %>
+  <%= " - #{team.players.join(', ')}" if team.players.count > 0 %>
+  </p>
+<% end %>

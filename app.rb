@@ -11,7 +11,7 @@ set :logging, nil
 $game = {}
 
 def initialize_test_game
-  $game[session.id] = Game.new(3, 2)
+  $game[session.id] = Game.new(2, 2)
   $game[session.id].add_team(Team.new('pandas', ['derek', 'rachel']))
   $game[session.id].add_team(Team.new('kangaroos', ['dan', 'kasey']))
   $game[session.id].add_team(Team.new('crocodiles', ['jay', 'libby']))

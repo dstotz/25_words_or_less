@@ -6,12 +6,12 @@
   <% @team_score_list << '<p class="score-list">&nbsp;</p>' if @team_score_list.count.odd? %>
 <% end %>
 
-<div class="col-md-12">
+<div class="col-md-12 score-block">
   <div class="row">
     <% split_count = (@team_score_list.count / 2) %>
     <% split_count = 1 if split_count.zero? %>
     <% @team_score_list.each_slice(split_count) do |group| %>
-      <%= "<div class=\"col-md-6 col-sm-6 col-6\">" %>
+      <%= "<div class=\"col-md-6 col-sm-6 col-6 score-block\">" %>
       <%= group.join %>
       <%= '</div>' %>
     <% end %>

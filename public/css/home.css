@@ -7,6 +7,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+#words h2 {
+  font-size: 25px;
+}
+
 h3 {
   font-size: 20px !important;
   margin-top: 10px;
@@ -16,11 +20,12 @@ h3 {
 
 h3.round-number {
   z-index: -1;
+  font-size: 15px !important;
 }
 
 hr {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 img.home-button {
@@ -39,9 +44,11 @@ input#hide-button {
   right: 5px;
 }
 
-div#current-score {
+div#current-score, div.score-block, div.team-button-block, pass-fail-buttons {
   margin-right: 0;
   margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 p.score-list, p.player-list {
@@ -52,10 +59,18 @@ p.score-list, p.player-list {
 }
 
 p.help-text {
-  /*color: lightgray;*/
   color: rgba(0, 0, 0, 0.25);
-  margin-top: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 12px;
+}
+
+div#set-bidding label {
+  font-size: 10px;
+}
+
+div#team-buttons p {
+  margin: 0;
 }
 
 button.team-buttons {
@@ -63,12 +78,20 @@ button.team-buttons {
   width: 40%;
 }
 
-#round-clock {
-  width: 110%;
+div.clock-container {
+  text-align: center;
 }
 
+#round-clock {
+  display: inline-block;
+  width: auto;
+  zoom: 0.8;
+  -moz-transform: scale(0.8)
+}
+
+
 #success-button, #fail-button {
-  width: 120px;
+  width: 95px;
   margin-left: 7px;
   margin-right: 7px;
 }

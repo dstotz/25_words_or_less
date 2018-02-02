@@ -1,10 +1,12 @@
 function refresh_words() {
-  $('#words').fadeOut(function() {
-    $.get('new-words', function(data){
-      $('#words').html(data);
+  if ($('#current-round').is(":visible")) {
+    $('#words').fadeOut(function() {
+      $.get('new-words', function(data){
+        $('#words').html(data);
+      });
     });
-  });
-  $('#words').fadeIn(show_words)
+    $('#words').fadeIn(show_words)
+  }
 }
 
 function toggle_hide_words() {
@@ -33,6 +35,8 @@ function timer_selection_to_seconds() {
 function team_selected() {
   $('#team-buttons').hide(500)
   $('#set-bidding').show(500)
+  $('#current-round').hide(500)
+  $('#current-score').hide(500)
 }
 
 function collect_round_results() {
@@ -43,8 +47,7 @@ function collect_round_results() {
 }
 
 function clock_started() {
-  $('#current-score').hide(500)
-  $('#current-round').hide(500)
+  $('#timer-amount').hide(500)
 }
 
 function round_success() {

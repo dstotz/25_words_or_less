@@ -1,5 +1,5 @@
 function refresh_words() {
-  if ($('#current-round').is(":visible")) {
+  if ($('#current-round').is(":visible") || $(location).attr('pathname') == '/word-generator') {
     $('#words').fadeOut(function() {
       $.get('new-words', function(data){
         $('#words').html(data);
